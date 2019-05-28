@@ -12,7 +12,7 @@ import { ModalpagePageModule } from './tab1/modalpage/modalpage.module'; //Modal
 
 import { Camera } from '@ionic-native/camera/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { Push } from '@ionic-native/push/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +29,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
     AndroidPermissions,
-    LocalNotifications
+    Push,
   ],
   bootstrap: [AppComponent]
 })
