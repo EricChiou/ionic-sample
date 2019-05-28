@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,8 @@ export class Tab1Page {
 
   constructor(
     private camera: Camera,
-    private androidPermissions: AndroidPermissions
+    private androidPermissions: AndroidPermissions,
+    private localNotifications: LocalNotifications
   ) {
 
   }
@@ -41,4 +43,13 @@ export class Tab1Page {
       // Handle error
     });
   }
+
+  notification() {
+    console.log("noti")
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'Single ILocalNotification',
+    });
+  }
+
 }

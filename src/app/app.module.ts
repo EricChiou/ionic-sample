@@ -12,6 +12,7 @@ import { ModalpagePageModule } from './tab1/modalpage/modalpage.module'; //Modal
 
 import { Camera } from '@ionic-native/camera/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Camera,
-    AndroidPermissions
+    AndroidPermissions,
+    LocalNotifications
   ],
   bootstrap: [AppComponent]
 })
