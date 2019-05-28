@@ -9,6 +9,27 @@
 
 <ion-content>
 
+  <!-- Menu -->
+  <ion-menu side="start" menuId="custom" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Custom Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+  <!-- Menu -->
+
   <!-- Back button -->
   <ion-header>
     <ion-toolbar>
@@ -88,27 +109,6 @@
     <ion-textarea></ion-textarea>
   </ion-item>
   <!-- Textarea -->
-
-  <!-- Menu -->
-  <ion-menu side="start" menuId="custom" class="my-custom-menu">
-    <ion-header>
-      <ion-toolbar color="tertiary">
-        <ion-title>Custom Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-        <ion-item>Menu Item</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-
-  <ion-router-outlet main></ion-router-outlet>
-  <!-- Menu -->
 
   <!-- Modal -->
   <ion-button expand="block" (click)="presentModal()">Modal</ion-button>
