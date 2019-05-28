@@ -52,4 +52,47 @@ export class Tab1Page {
     });
   }
 
+  videoStearm() {
+    const video = document.getElementsByTagName('video')[0];
+
+    if (video.srcObject) {
+      const stream: any = video.srcObject;
+      const tracks = stream.getTracks();
+      tracks.forEach((track: any) => {
+        track.stop();
+      });
+      video.srcObject = null;
+
+    } else {
+      const constraints = { audio: true, video: true };
+      navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+        video.srcObject = stream;
+        video.play();
+      }).catch((error) => {
+        // console.error("getUserMedia error: ", error);
+      });
+    }
+  }
+
+  audioStearm() {
+    const audio = document.getElementsByTagName('audio')[0];
+
+    if (audio.srcObject) {
+      const stream: any = audio.srcObject;
+      const tracks = stream.getTracks();
+      tracks.forEach((track: any) => {
+        track.stop();
+      });
+      audio.srcObject = null;
+
+    } else {
+      const constraints = { audio: true, video: false };
+      navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+        audio.srcObject = stream;
+        audio.play();
+      }).catch((error) => {
+        // console.error("getUserMedia error: ", error);
+      });
+    }
+  }
 }

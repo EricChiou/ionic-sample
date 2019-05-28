@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab One
+      Ionic Sample
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button expand="block" (click)="clickImage()">camera</ion-button>
+  <ion-button expand="block" (click)="clickImage()">
+    Camera
+  </ion-button>
 
   <ion-button expand="block" routerLink="/nextpage" routerDirection="root">
     Navigation
@@ -20,5 +22,19 @@
   <ion-button expand="block" (click)="notification()">
     Notification
   </ion-button>
+  
+  <ion-button expand="block" (click)="videoStearm()">
+    Video Stream
+  </ion-button>
+  <div class="media">
+    <video controls></video>
+  </div>
+
+  <ion-button expand="block" (click)="audioStearm()">
+    Audio Stream
+  </ion-button>
+  <div class="media">
+    <audio controls></audio>
+  </div>
 
 </ion-content>
