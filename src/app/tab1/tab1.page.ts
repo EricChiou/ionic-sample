@@ -41,4 +41,24 @@ export class Tab1Page {
       // Handle error
     });
   }
+
+  videoStearm() {
+    const constraints = { audio: true, video: true };
+    const video = document.getElementsByTagName('video')[0];
+    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+      video.srcObject = stream;
+    }).catch((error) => {
+      console.error("getUserMedia error: ", error);
+    });
+  }
+
+  audioStearm() {
+    const constraints = { audio: true, video: false };
+    const audio = document.getElementsByTagName('audio')[0];
+    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+      audio.srcObject = stream;
+    }).catch((error) => {
+      console.error("getUserMedia error: ", error);
+    });
+  }
 }
