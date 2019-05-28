@@ -1,0 +1,201 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>UIpage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Back button -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref=""></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Back button -->
+
+  <!-- Alert button -->
+  <ion-button expand="block" (click)="presentAlertConfirm()">alert</ion-button>
+  <!-- Alert button -->
+
+  <!-- Checkboxes in a List -->
+  <ion-list>
+    <ion-item *ngFor="let entry of form">
+      <ion-checkbox slot="start" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      <ion-label>{{entry.val}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- Checkboxes in a List -->
+
+  <!-- Datetime -->
+  <ion-item>
+    <ion-label position="floating">MM/DD/YYYY</ion-label>
+    <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMMM DDDD YYYY" [yearValues]="customYearValues"
+      min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>h:mm a</ion-label>
+    <ion-datetime displayFormat="h:mm a"></ion-datetime>
+  </ion-item>
+  <!-- Datetime -->
+
+  <!-- Picker  -->
+  <ion-item>
+    <ion-label>Picker</ion-label>
+    <ion-label color="danger">{{ framework }}</ion-label>
+    <ion-button slot="end" fill="clear" (click)="showPicker()">Select</ion-button>
+  </ion-item>
+  <!-- Picker  -->
+
+  <!-- Fab  -->
+  <ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="share"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- Fab  -->
+
+  <!-- Input -->
+  <ion-item>
+    <ion-label>Input</ion-label>
+    <ion-input placeholder="Enter Input"></ion-input>
+  </ion-item>
+  <!-- Input -->
+
+  <!-- Textarea -->
+  <ion-item>
+    <ion-label position="floating">Textarea</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+  <!-- Textarea -->
+
+  <!-- Menu -->
+  <ion-menu side="start" menuId="custom" class="my-custom-menu">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Custom Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+  <!-- Menu -->
+
+  <!-- Modal -->
+  <ion-button expand="block" (click)="presentModal()">Modal</ion-button>
+  <!-- Modal -->
+
+  <!-- Radio -->
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Radio</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Biff</ion-label>
+        <ion-radio slot="start" value="biff" checked></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Griff</ion-label>
+        <ion-radio slot="start" value="griff"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+  <!-- Radio -->
+
+  <!-- Range -->
+  <ion-item>
+    <ion-range min="20" max="80" step="2" pin="true">
+      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+      <ion-icon slot="end" name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <!-- Range -->
+
+  <!-- Searchbar -->
+  <ion-searchbar color="danger"></ion-searchbar>
+  <!-- Searchbar -->
+
+  <!-- Select -->
+  <ion-item>
+    <ion-label>Select</ion-label>
+    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="brown">Brown</ion-select-option>
+      <ion-select-option value="blonde">Blonde</ion-select-option>
+      <ion-select-option value="black">Black</ion-select-option>
+      <ion-select-option value="red">Red</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!-- Select -->
+
+  <!-- Slides -->
+  <ion-button expand="block" routerLink="/slidespage">
+    Slides
+  </ion-button>
+  <!-- Slides -->
+
+  <!-- Toast -->
+  <ion-button expand="block" (click)="presentToast()">Toast</ion-button>
+  <!-- Toast -->
+
+  <!-- Line-sliding -->
+  <ion-item-sliding>
+    <ion-item href="#">
+      <ion-label>
+        <h2>Line-sliding</h2>
+        <p>A new message in your network</p>
+      </ion-label>
+      <ion-note slot="end">
+        10:45 AM
+      </ion-note>
+    </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option>
+        <ion-icon slot="icon-only" name="heart"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+      <ion-item-option>
+        <ion-icon slot="icon-only" name="star"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+</ion-content>
